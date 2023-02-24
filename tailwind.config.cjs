@@ -128,7 +128,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["Space Grotesk", ...defaultTheme.fontFamily.sans],
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
     },
   },
