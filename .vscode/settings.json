@@ -1,3 +1,3 @@
 {
-    "window.title": "${activeEditorShort}${separator}${rootName} ${separator} [Branch: master]"
+    "window.title": "${activeEditorShort}${separator}${rootName} ${separator} [Branch: master]${separator}[Branch: master]"
 }
