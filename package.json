@@ -15,6 +15,7 @@
     "astro": "^3.0.7"
   },
   "dependencies": {
+    "@astrojs/vercel": "^5.2.0",
     "@fontsource/itim": "^5.0.17",
     "astro-icon": "^0.8.1"
   }
