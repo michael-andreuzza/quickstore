@@ -85,6 +85,9 @@ module.exports = {
       ],
     },
     extend: {
+      animation: {
+        'spin-slow': 'spin 30s linear infinite',
+      },
       backgroundImage: (theme) => ({
         screens: "url('/path-to/image.png')",
       }),
@@ -126,9 +129,12 @@ module.exports = {
           800: "#7F4F1F",
           900: "#422910",
         },
+        cokiey: {
+          500: "#FFEFAF",
+        },
       },
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        sans: ["Itim", "Inter", ...defaultTheme.fontFamily.sans],
       },
     },
   },
