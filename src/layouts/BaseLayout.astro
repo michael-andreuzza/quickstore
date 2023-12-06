@@ -2,16 +2,18 @@
 import BaseHead from "../components/BaseHead.astro";
 // import Footer from "../components/global/Footer.astro";
 // import '@fontsource/borel';
-import '@fontsource/itim';
+import "@fontsource/itim";
+import { SEO } from "astro-seo";
 ---
 
 <html lang="en">
   <head>
+    <SEO title="Cokie" description="Tiệm đồ tên bánh" />
     <BaseHead />
   </head>
 
   <body class="bg-charcoal-500">
     <slot />
-{/* <Footer/> */}
+    {/* <Footer/> */}
   </body>
 </html>
