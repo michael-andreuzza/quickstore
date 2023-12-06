@@ -12,7 +12,9 @@
   "devDependencies": {
     "@astrojs/sitemap": "^3.0.0",
     "@astrojs/tailwind": "^5.0.0",
-    "astro": "^3.0.7"
+    "astro": "^3.0.7",
+    "prettier": "^3.1.0",
+    "prettier-plugin-astro": "^0.12.2"
   },
   "dependencies": {
     "@astrojs/vercel": "^5.2.0",

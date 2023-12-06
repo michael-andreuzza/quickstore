@@ -86,7 +86,7 @@ module.exports = {
     },
     extend: {
       animation: {
-        'spin-slow': 'spin 30s linear infinite',
+        "spin-slow": "spin 30s linear infinite",
       },
       backgroundImage: (theme) => ({
         screens: "url('/path-to/image.png')",
