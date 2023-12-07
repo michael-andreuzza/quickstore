@@ -131,6 +131,10 @@ module.exports = {
         },
         cokiey: {
           500: "#FFEFAF",
+          700: "#C5B77A",
+        },
+        cokiep: {
+          500: "#d3a8cd",
         },
       },
       fontFamily: {
