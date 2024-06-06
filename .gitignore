@@ -17,3 +17,7 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# Config file
+.astro
+.vscode
