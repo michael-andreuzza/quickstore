@@ -1,62 +1,131 @@
 <main id="ia">
-    <div class="relative mx-auto px-8 max-w-7xl py-12 md:px-12">
-      <div class="flex w-full mx-auto justify-center">
-        <h1 class="text-negroni-500 font-bold text-2xl">We are working on this!</h1>
-      </div>
+  <div class="relative mx-auto px-8 max-w-7xl py-12 md:px-12">
+    <div class="flex flex-col w-full mx-auto justify-center items-center">
+      <button
+        type="button"
+        onclick="init()"
+        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >Start</button
+      >
+      <div id="webcam-container"></div>
+      <div id="label-container"></div>
+      <div id="result"></div>
+      <button
+        id="stop"
+        type="button"
+        onclick="stop()"
+        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hidden"
+        >Stop</button
+      >
     </div>
-  </main>
-  <script type="text/javascript" is:inline>
-    // More API functions here:
-    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+  </div>
+</main>
+<script type="text/javascript">
+  const URL = "/iamodel/";
 
-    // the link to your model provided by Teachable Machine export panel
-    const URL = "./my_model/";
+  let active = false;
 
-    let model, webcam, labelContainer, maxPredictions;
+  let model, webcam, labelContainer, maxPredictions, result, preductionValue;
 
-    // Load the image model and setup the webcam
-    async function init() {
-        const modelURL = URL + "model.json";
-        const metadataURL = URL + "metadata.json";
+  async function init() {
+    if (active) return;
+    active = true;
+    const modelURL = URL + "model.json";
+    const metadataURL = URL + "metadata.json";
 
-        // load the model and metadata
-        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-        // or files from your local hard drive
-        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
-        model = await tmImage.load(modelURL, metadataURL);
-        maxPredictions = model.getTotalClasses();
+    // wait message
+    labelContainer = document.getElementById("label-container");
+    labelContainer.appendChild(
+      document
+        .createElement("div")
+        .appendChild(document.createTextNode("Model loading, please wait..."))
+    );
 
-        // Convenience function to setup a webcam
-        const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-        await webcam.setup(); // request access to the webcam
-        await webcam.play();
-        window.requestAnimationFrame(loop);
+    // load the model and metadata
+    // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+    // or files from your local hard drive
+    // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+    model = await tmImage.load(modelURL, metadataURL);
+    maxPredictions = model.getTotalClasses();
 
-        // append elements to the DOM
-        document.getElementById("webcam-container").appendChild(webcam.canvas);
-        labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions; i++) { // and class labels
-            labelContainer.appendChild(document.createElement("div"));
-        }
+    // Convenience function to setup a webcam
+    const flip = true; // whether to flip the webcam
+    webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+    await webcam.setup(); // request access to the webcam
+    await webcam.play();
+    window.requestAnimationFrame(loop);
+
+    // append elements to the DOM
+    document.getElementById("webcam-container").appendChild(webcam.canvas);
+
+    // show stop button
+    document.getElementById("stop").classList.remove("hidden");
+  }
+
+  async function loop() {
+    if (!active) return;
+    webcam.update();
+    await predict();
+    render_prediction();
+    window.requestAnimationFrame(loop);
+  }
+
+  async function predict() {
+    if (!active) return;
+    const prediction = await model.predict(webcam.canvas);
+    // Log the most likely prediction class, if are no values up to 0.8 show "unknown"
+
+    let min = 0.8;
+    result = "unknown";
+    let predLog = [];
+
+    for (let i = 0; i < maxPredictions; i++) {
+      if (prediction[i].probability > min) {
+        result = prediction[i].className;
+        preductionValue =
+          prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+        predLog.push(preductionValue);
+      }
     }
 
-    async function loop() {
-        webcam.update(); // update the webcam frame
-        await predict();
-        window.requestAnimationFrame(loop);
-    }
+    /**
+      0: {className: 'earbuds', probability: 0.8432045578956604}
+      1: {className: 'headphones', probability: 0.015194972045719624}
+      2: {className: 'speakers', probability: 0.004613739904016256}
+      3: {className: 'tvbox', probability: 0.13698668777942657}
+     */
+  }
 
-    // run the webcam image through the image model
-    async function predict() {
-        // predict can take in an image, video or canvas html element
-        const prediction = await model.predict(webcam.canvas);
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
-        }
+  function render_prediction() {
+    if (!active) return;
+    switch (result) {
+      case "earbuds":
+        labelContainer.innerHTML = "Our IA detected product: <b>Earbuds</b>";
+        break;
+      case "headphones":
+        labelContainer.innerHTML = "Our IA detected product: <b>Headphones</b>";
+        break;
+      case "speakers":
+        labelContainer.innerHTML = "Our IA detected product: <b>Speaker</b>";
+        break;
+      case "tvbox":
+        labelContainer.innerHTML =
+          "Our IA detected product: <b>TV Sound Kit</b>";
+        break;
+      default:
+        labelContainer.innerHTML =
+          "Our IA did not detect any product. Try to change perspective.";
     }
+  }
+
+  function stop() {
+    if (!active) return;
+
+    // delete dom elements
+    document.getElementById("webcam-container").removeChild(webcam.canvas);
+    document.getElementById("stop").classList.add("hidden");
+    document.getElementById("label-container").innerHTML = "";
+
+    active = false;
+  }
 </script>
-
-  

@@ -1,6 +1,9 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
+
+const { title, useIA } = Astro.props;
 ---
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
 <meta charset="UTF-8" />
@@ -37,4 +40,15 @@ import '../styles/global.css';
 />
 <meta name="msapplication-TileColor" content="#3E433E" />
 <meta name="theme-color" content="#3E433E" />
-<link href="https://fonts.cdnfonts.com/css/space-grotesk" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/space-grotesk" rel="stylesheet" />
+
+{title && <title>{title}</title>}
+
+{
+  useIA && (
+    <>
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js" />
+      <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js" />
+    </>
+  )
+}

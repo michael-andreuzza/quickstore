@@ -2,16 +2,18 @@
 import Navigation from "@/components/global/Navigation.astro";
 import BaseHead from "@/components/BaseHead.astro";
 import Footer from "@/components/global/Footer.astro";
+
+const { title, useIA = false } = Astro.props;
 ---
 
 <html lang="en">
   <head>
-    <BaseHead />
+    <BaseHead title={title} useIA={useIA} />
   </head>
 
   <body class="bg-charcoal-500">
     <Navigation />
     <slot />
-    <Footer/>
+    <Footer />
   </body>
 </html>
