@@ -122,6 +122,7 @@
     if (!active) return;
 
     // delete dom elements
+    webcam.stop();
     document.getElementById("webcam-container").removeChild(webcam.canvas);
     document.getElementById("stop").classList.add("hidden");
     document.getElementById("label-container").innerHTML = "";
