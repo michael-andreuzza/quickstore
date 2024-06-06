@@ -1,6 +1,7 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/global/Footer.astro";
+import Navigation from "@/components/global/Navigation.astro";
+import BaseHead from "@/components/BaseHead.astro";
+import Footer from "@/components/global/Footer.astro";
 ---
 
 <html lang="en">
@@ -9,7 +10,8 @@ import Footer from "../components/global/Footer.astro";
   </head>
 
   <body class="bg-charcoal-500">
+    <Navigation />
     <slot />
-<Footer/>
+    <Footer/>
   </body>
 </html>
