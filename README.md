@@ -1,11 +1,38 @@
 # Astro & Tailwind CSS Starter Kit
-## Template Integrations
-- @astrojs/tailwind - https://docs.astro.build/en/guides/integrations-guide/tailwind/
-- @astrojs/sitemap - https://docs.astro.build/en/guides/integrations-guide/sitemap/
 
-- ## License
+by https://lexingtonthemes.com
+
+## License
 
 This template is open-source software licensed under the [GPL-3.0 license](https://opensource.org/licenses/GPL-3.0). Feel free to fork, modify, and use it in your projects.
+## Need an attribution-free version?
+
+Checkout [Lexington Themes](https://lexingtonthemes.com/) for free and premium multipage themes & UI Kits
+For freelancers, developers, businesses, and personal use.
+Beautifully crafted with Astro.js, and Tailwind CSS — Simple & easy to customise.
+
+## This template is using Tailwind CSS V4
+
+Now we are using only a CSS file. It's called `global.css` and it's located in the src/styles folder. Now we are eimporting Tailwind CSS on the same file instead of using the `tailwind.config.cjs` file. Like this:
+
+```css
+// Importing Tailwind CSS
+@import "tailwindcss";
+// Importing Tailwind plugins
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+```
+
+Then to add your styles you will use the @theme directive. Like this:
+
+```css
+@theme {
+  /* Your CSS goes here, see how styles are written on the global.css file */
+}
+```
+
+Remember this is just in Alpha version, so you can use it as you want. Just keep an eye on the changes that Tailwind CSS is going to make.
+
 
 ## Template Structure
 Inside of your Astro project, you'll see the following folders and files:
