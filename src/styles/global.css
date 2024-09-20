@@ -3,10 +3,26 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'MyCustomFont';
-    src: url('../../fonts/EditorialNew/Regular.otf') format('otf');
-  }
-  
-  body {
-    font-family: 'MyCustomFont', sans-serif;
-  }
+  font-family: 'EditorialNewLight';
+  src: local('EditorialNewLight'), url('/public/fonts/EditorialNew/Ultralight.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'EditorialNewRegular';
+  src: local('EditorialNewRegular'), url('/public/fonts/EditorialNew/Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'EditorialNewUltrabold';
+  src: local('EditorialNewUltrabold'), url('/public/fonts/EditorialNew/Ultrabold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'EditorialNewUltraboldItalic';
+  src: local('EditorialNewUltraboldItalic'), url('/public/fonts/EditorialNew/UltraboldItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'EditorialNewUltralightItalic';
+  src: local('EditorialNewUltralightItalic'), url('/public/fonts/EditorialNew/UltralightItalic.otf') format('opentype');
+}

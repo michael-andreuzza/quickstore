@@ -1,0 +1,68 @@
+[
+    {
+        "name": "Astrape",
+        "price": 36,
+        "description": "Astrape is a lightning bolt that is said to be the weapon of Zeus. It is a symbol of power and strength.",
+        "images": {
+            "front": "https://images-api.printify.com/mockup/6532a02f8e69e7e48b07e009/12100/92570/astrape_1710931263771.jpg?camera_label=front&s=1200",
+            "back": "https://images-api.printify.com/mockup/6532a02f8e69e7e48b07e009/12100/92571/astrape_1710931263771.jpg?camera_label=back&s=1200",
+            "neck": "https://images-api.printify.com/mockup/6532a02f8e69e7e48b07e009/12100/92586/astrape_1710931263772.jpg?camera_label=front-collar-closeup&s=1200",
+            "back_neck": "https://images-api.printify.com/mockup/6532a02f8e69e7e48b07e009/12100/92587/astrape_1710931263772.jpg?camera_label=back-collar-closeup&s=1200"
+        }
+    },
+    {
+        "name": "Darkfi",
+        "price": 36,
+        "description": "Darkfi is a symbol of mystery and darkness, often representing the unknown and hidden powers.",
+        "images": {
+            "front": "https://images-api.printify.com/mockup/6532c1bfe0923e5edf0f321a/12124/92570/darkfi_1710931263995.jpg?camera_label=front&s=1200",
+            "back": "https://images-api.printify.com/mockup/6532c1bfe0923e5edf0f321a/12124/92571/darkfi_1710931263995.jpg?camera_label=back&s=1200",
+            "neck": "https://images-api.printify.com/mockup/6532c1bfe0923e5edf0f321a/12124/92586/darkfi_1710931263996.jpg?camera_label=front-collar-closeup&s=1200",
+            "back_neck": "https://images-api.printify.com/mockup/6532c1bfe0923e5edf0f321a/12124/92587/darkfi_1710931263996.jpg?camera_label=back-collar-closeup&s=1200"
+        }
+    },
+    {
+        "name": "Zetachain",
+        "price": 36,
+        "description": "Zetachain represents the interconnectedness of the universe, symbolizing balance and harmony.",
+        "images": {
+            "front": "https://images-api.printify.com/mockup/65aee8372438647ab70e600c/12100/92570/zetachain_1710931264266.jpg?camera_label=front&s=1200",
+            "back": "https://images-api.printify.com/mockup/65aee8372438647ab70e600c/12100/92571/zetachain_1710931264267.jpg?camera_label=back&s=1200",
+            "neck": "https://images-api.printify.com/mockup/65aee8372438647ab70e600c/12100/92586/zetachain_1710931264267.jpg?camera_label=front-collar-closeup&s=1200",
+            "back_neck": "https://images-api.printify.com/mockup/65aee8372438647ab70e600c/12100/92587/zetachain_1710931264267.jpg?camera_label=back-collar-closeup&s=1200"
+        }
+    },
+    {
+        "name": "Aleo",
+        "price": 36, 
+        "description": "Aleo embodies innovation and progress, symbolizing a new frontier in technology and ideas.",
+        "images": {
+            "front": "https://images-api.printify.com/mockup/65c3638a5f57a4fd670b1b8b/12124/92570/aleo_1710931263981.jpg?camera_label=front&s=1200",
+            "back": "https://images-api.printify.com/mockup/65c3638a5f57a4fd670b1b8b/12124/92571/aleo_1710931263982.jpg?camera_label=back&s=1200",
+            "neck": "https://images-api.printify.com/mockup/65c3638a5f57a4fd670b1b8b/12124/92586/aleo_1710931263983.jpg?camera_label=front-collar-closeup&s=1200",
+            "back_neck": "https://images-api.printify.com/mockup/65c3638a5f57a4fd670b1b8b/12124/92587/aleo_1710931263983.jpg?camera_label=back-collar-closeup&s=1200"
+        }
+    },
+    {
+        "name": "EigenLayer",
+        "price": 36,
+        "description": "EigenLayer represents the foundation and structure of the world, symbolizing stability and endurance.",
+        "images": {
+            "front": "https://images-api.printify.com/mockup/65c8a20c46543b2d8404c87b/12100/92570/eigenlayer_1710931264345.jpg?camera_label=front&s=1200",
+            "back": "https://images-api.printify.com/mockup/65c8a20c46543b2d8404c87b/12100/92571/eigenlayer_1710931264345.jpg?camera_label=back&s=1200",
+            "neck": "https://images-api.printify.com/mockup/65c8a20c46543b2d8404c87b/12100/92586/eigenlayer_1710931264346.jpg?camera_label=front-collar-closeup&s=1200",
+            "back_neck": "https://images-api.printify.com/mockup/65c8a20c46543b2d8404c87b/12100/92587/eigenlayer_1710931264346.jpg?camera_label=back-collar-closeup&s=1200"
+        }
+    },
+    {
+        "name": "Alephium",
+        "price": 36,
+        "description": "Alephium is a symbol of infinite possibilities, representing expansion and boundless potential.",
+        "images": {
+            "front": "https://images-api.printify.com/mockup/65e7120dcfd9db7f3002d707/12100/92570/alephium_1710931286102.jpg?camera_label=front&s=1200",
+            "back": "https://images-api.printify.com/mockup/65e7120dcfd9db7f3002d707/12100/92571/alephium_1710931286102.jpg?camera_label=back&s=1200",
+            "neck": "https://images-api.printify.com/mockup/65e7120dcfd9db7f3002d707/12100/92586/alephium_1710931286103.jpg?camera_label=front-collar-closeup&s=1200",
+            "back_neck": "https://images-api.printify.com/mockup/65e7120dcfd9db7f3002d707/12100/92587/alephium_1710931286103.jpg?camera_label=back-collar-closeup&s=1200"
+        }
+    }
+]
