@@ -3,9 +3,12 @@
 - @astrojs/tailwind - https://docs.astro.build/en/guides/integrations-guide/tailwind/
 - @astrojs/sitemap - https://docs.astro.build/en/guides/integrations-guide/sitemap/
 
+
 - ## License
 
 This template is open-source software licensed under the [GPL-3.0 license](https://opensource.org/licenses/GPL-3.0). Feel free to fork, modify, and use it in your projects.
+## Before using this template publicly, please ensure you remove my name and any links associated with me from the website.
+
 
 ## Template Structure
 Inside of your Astro project, you'll see the following folders and files:
